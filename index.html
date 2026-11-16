@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docket · a typed task tracker</title>
+    <meta name="description" content="Docket is a small task tracker built with plain HTML, CSS and TypeScript." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316232E'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%2337C48A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <h1 class="masthead__title">Docket</h1>
+        <p class="masthead__sub">What needs doing, and where it stands.</p>
+      </header>
+
+      <form id="add-form" class="add" autocomplete="off">
+        <label class="visually-hidden" for="title">New task</label>
+        <input
+          id="title"
+          class="add__input"
+          type="text"
+          name="title"
+          placeholder="Add a task"
+          maxlength="120"
+          required
+        />
+        <button class="btn btn--primary" type="submit">Add task</button>
+      </form>
+
+      <section class="board" aria-labelledby="board-heading">
+        <div class="board__bar">
+          <h2 id="board-heading" class="visually-hidden">Tasks</h2>
+          <div class="chips" role="group" aria-label="Filter tasks by status">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">
+              All <span class="chip__count">0</span>
+            </button>
+            <button type="button" class="chip" data-filter="todo" aria-pressed="false">
+              To do <span class="chip__count">0</span>
+            </button>
+            <button type="button" class="chip" data-filter="in-progress" aria-pressed="false">
+              In progress <span class="chip__count">0</span>
+            </button>
+            <button type="button" class="chip" data-filter="done" aria-pressed="false">
+              Done <span class="chip__count">0</span>
+            </button>
+          </div>
+          <p id="summary" class="summary" aria-live="polite"></p>
+        </div>
+
+        <ul id="task-list" class="tasks"></ul>
+        <p id="empty" class="empty" hidden></p>
+      </section>
+
+      <footer class="foot">Saved in this browser. Built with plain HTML, CSS and TypeScript.</footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

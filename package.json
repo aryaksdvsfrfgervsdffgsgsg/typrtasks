@@ -1,0 +1,13 @@
+{
+  "name": "docket",
+  "version": "1.0.0",
+  "description": "Docket: a typed task tracker in plain HTML, CSS and TypeScript.",
+  "private": true,
+  "scripts": {
+    "compile": "tsc",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

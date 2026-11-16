@@ -1,0 +1,3 @@
+node_modules/
+.DS_Store
+# NOTE: app.js and model.js are intentionally NOT ignored — the static host serves them.
